@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Dot Portal</title>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .dot-container {
+        display: flex;
+        gap: 30px;
+      }
+
+      .dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        cursor: pointer;
+        transition: transform 0.6s ease, opacity 0.4s ease;
+      }
+
+      .dot.grow {
+        transform: scale(20);
+        opacity: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="dot-container">
+      <div
+        class="dot"
+        onclick="redirectDot(this, 'https://gurupavan5.github.io/Gurupavan_portfolio/')"
+      ></div>
+    </div>
+
+    <script>
+      function redirectDot(dot, url) {
+        dot.classList.add("grow");
+        setTimeout(() => {
+          window.location.href = url;
+        }, 600); // delay to let the animation play
+      }
+    </script>
+  </body>
+</html>
